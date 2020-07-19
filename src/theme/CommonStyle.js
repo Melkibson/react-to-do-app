@@ -5,8 +5,6 @@ const GlobalStyle = createGlobalStyle`
     {
         padding: 0px;
         margin: 0px;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
     }
     body, html {
         width: 100%;
@@ -31,8 +29,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        font-family: 'Karla', sans-serif;
         margin: auto;
-        background: linear-gradient(180deg, rgba(255,126,152,1) 35%, rgba(255,235,138,1) 100%););
+        background: linear-gradient(90deg, rgba(233,233,233,1) 35%, rgba(255,255,249,1) 100%);
     }
 `;
 

@@ -12,8 +12,9 @@ const AppHeader = styled.header`
 
 const Title = styled.h1`
     font-family: 'Karla';
-    font-size: 44px;
-    color: white
+    font-size: 54px;
+    font-weight: bold;
+    color: rgb(94, 0, 175)
 `
 
 const WrapHeader = styled.div`
@@ -21,13 +22,17 @@ const WrapHeader = styled.div`
     display: flex;
     justify-content: center
     margin: 0 auto;
-    padding : 0 150px
+    padding : 0 150px;
+
+    @media (max-width: 768px){
+        padding: 0 30px;
+    };
 `
 function Header(){
     return (
         <AppHeader>
             <WrapHeader>
-                <Title>To do</Title>
+                <Title>My tasks</Title>
             </WrapHeader>   
         </AppHeader>
     )

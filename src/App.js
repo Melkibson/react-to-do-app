@@ -7,8 +7,7 @@ import useTodoState from './components/useTodoState';
 
 function App() {
   const { todos, addTodo, deleteTodo } = useTodoState([]);
-
-
+  
   return (
     <Fragment>
         <CommonStyle />
@@ -16,7 +15,6 @@ function App() {
         <CardForm 
         saveTodo={todoText=>{
           const trimmedText = todoText.trim();
-
           if (trimmedText.length > 0) {
             addTodo(trimmedText);
           }
