@@ -1,12 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
-import { render } from '@testing-library/react';
 
-const Header = styled.header`
+const AppHeader = styled.header`
     width: 100%;
     height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     `;
 
-render(
-    <Header></Header>
-)
+const Title = styled.h1`
+    font-family: 'Karla';
+    font-size: 44px;
+    color: white
+`
+
+const WrapHeader = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center
+    margin: 0 auto;
+    padding : 0 150px
+`
+function Header(){
+    return (
+        <AppHeader>
+            <WrapHeader>
+                <Title>To do</Title>
+            </WrapHeader>   
+        </AppHeader>
+    )
+}
+
+export default Header;

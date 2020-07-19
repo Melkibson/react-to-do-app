@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
+import CommonStyle from './theme/CommonStyle';
+import Header from './components/Header';
+import CardForm from './components/CardForm';
+import CardList from './components/CardList';
+import useTodoState from './components/useTodoState';
 
 function App() {
+  const { todos, addTodo, deleteTodo } = useTodoState([]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+        <CommonStyle />
+        <Header />
+        <CardForm 
+        saveTodo={todoText=>{
+          const trimmedText = todoText.trim();
+
+          if (trimmedText.length > 0) {
+            addTodo(trimmedText);
+          }
+        }}/>
+        <CardList todos={todos} deleteTodo={deleteTodo} />
+    </Fragment>
+    
+    
   );
-}
+};
 
 export default App;
